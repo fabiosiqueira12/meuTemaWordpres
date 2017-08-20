@@ -1,0 +1,319 @@
+.sessao {
+    &.inicio {
+        background-position: center center !important;
+        background-size: cover !important;
+        height: 100vh;
+        position: relative;
+        @media screen and (min-width : 781px){
+            animation: shrink 7s infinite alternate;
+        }
+        @media screen and (max-width : 780px){
+            height : calc(100vh - 100px) !important;
+        }
+        @keyframes shrink {
+            0% {
+                background-size: 110% 110%;
+            }
+            100% {
+                background-size: 100% 100%;
+            }
+        }
+        .info-inicio {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            width: 1000px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+            @media screen and (max-width : 780px){
+                width : 100%;
+                padding : 20px;
+            }
+            @media screen and (max-width : 560px){
+                h1{
+                    font-size : 32px !important;
+                }
+            }
+            h1 {
+                font-size: 45px;
+                text-transform: uppercase;
+                font-family: Graduate, cursive;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+            p {
+                font-size: 22px;
+            }
+            h4 {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-family: Graduate, cursive;
+                letter-spacing: 1px;
+            }
+        }
+        .arrow,
+        .arrow:before {
+            position: absolute;
+            left: 50%;
+        }
+        .arrow {
+            width: 40px;
+            height: 40px;
+            top: 90%;
+            margin: -20px 0 0 -20px;
+            -webkit-transform: rotate(45deg);
+            border-left: none;
+            border-top: none;
+            border-right: 2px #fff solid;
+            border-bottom: 2px #fff solid;
+        }
+        .arrow:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            margin: -10px 0 0 -10px;
+            border-left: none;
+            border-top: none;
+            border-right: 1px #fff solid;
+            border-bottom: 1px #fff solid;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-name: arrow;
+        }
+        @keyframes arrow {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-10px, -10px);
+            }
+        }
+    }
+    &.quem-sou {
+        .texto {
+            font-size: 18px;
+        }
+    }
+    &.habilidades {
+        padding-top: 40px;
+        padding-bottom: 30px;
+        background: #fff;
+        .linha-skills {
+            margin-top: 60px;
+        }
+        .skill-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            min-height : 122px;
+            @media screen and (max-width : 560px){
+                .icone{
+                    width : 39% !important;
+                    &:before{
+                        left : 98px !important;
+                    }
+                }
+            }
+            &:hover{
+                .icone{
+                    border-color: #45bf55 !important;
+                    &:before{
+                        border-left-color: #45bf55 !important;
+                    }
+                }
+            }
+            .icone {
+                display: flex;
+                width: 40%;
+                height: 100px;
+                position: relative;
+                border: solid 1px #cecece;
+                margin-right: 40px;
+                transition: all 0.5s !important;
+                align-items: center;
+                justify-content: center;
+                &:before {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border-left: 20px solid #cecece;
+                    border-top: 50px solid #fff;
+                    border-bottom: 50px solid #fff;
+                    top: 0;
+                    left: 91px;
+                    position: absolute;
+                    transition: all 0.5s !important;
+                }
+                &:after {
+                    content: "";
+                    border-style: solid;
+                    border-color: transparent transparent transparent #fff;
+                    border-width: 50px 0px 50px 20px;
+                    position: absolute;
+                    width: 0px;
+                    height: 0px;
+                    top: 0;
+                    left: 100%;
+                    transition: all 0.5s !important;
+                }
+                img {
+                    width: 50px;
+                }
+            }
+            .info-skill {
+                width: 71%;
+                margin-left: 2%;
+                .titulo {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    color: #45bf55;
+                    font-size: 18px;
+                    font-family: 'Graduate', cursive;
+                    letter-spacing: 1px;
+                }
+                .descricao{
+                    font-size: 13px;
+                    p{
+                        margin-top : 0px !important;
+                    }
+                }
+            }
+        }
+    }
+    &.portfolio {
+        .linha-portfolios {
+            margin-top: 60px;
+        }
+        .card {
+            margin-bottom: 30px;
+            .card-gallery{
+                display: none;
+                overflow: hidden;
+                img{
+                    width: 2px;
+                }
+            }
+            .card-image {
+                img {
+                    height: 224px;
+                    transition: all 0.3s ease;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+            .card-title {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-family: 'Graduate', cursive;
+            }
+            p {
+                font-weight: bold;
+                color: #45bf55;
+            }
+            .card-action {
+                a {
+                    color: #000 !important;
+                    transition: all 0.3s !important;
+                    i {
+                        margin-left: 6px;
+                    }
+                    &:hover,
+                    &:focus {
+                        color: #45bf55 !important;
+                    }
+                }
+            }
+        }
+    }
+    &.contato {
+        background: #fff;
+        position: relative;
+        .linha-contato {
+            display: flex;
+            align-items: center;
+            @media screen and (max-width : 780px){
+                display : block !important;
+            }
+        }
+        .titulo-container {
+            text-align: left !important;
+            margin-bottom: 60px;
+        }
+        .linha-infor {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            .icone {
+                width: 14%;
+                margin-right: 1%;
+                i {
+                    font-size: 40px;
+                }
+            }
+            .text {
+                width: 86%;
+                color: #636363;
+                font-size: 18px;
+                margin-left: 4%;
+                .titulo {
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #45bf55;
+                    text-transform: uppercase;
+                    margin-bottom: 6px;
+                    font-family: 'Graduate', cursive;
+                }
+            }
+        }
+        .background-contato {
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media screen and (max-width : 780px){
+                padding : 20px !important;
+                #form-contato,.wpcf7-form{
+                    width : 100% !important;
+                    textarea{
+                        width : 100% !important;
+                    }
+                }
+            }
+            #form-contato,.wpcf7-form {
+                width: 520px;
+                .prefix {
+                    top: 7px;
+                    color: #fff;
+                }
+                label {
+                    color: #fff;
+                    font-weight: bold;
+                    font-family: 'Graduate', cursive;
+                    text-transform: uppercase;
+                }
+                input,
+                textarea {
+                    color: #fff;
+                }
+                textarea {
+                    margin-top: 30px;
+                    height: 104px;
+                    width : 520px;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                         box-sizing: border-box;
+                }
+                .btn {
+                    margin-top: 10px;
+                    background: #45bf55;
+                }
+            }
+        }
+    }
+}
