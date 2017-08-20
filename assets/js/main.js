@@ -23,12 +23,25 @@ $(document).ready(function () {
     });
 
     $('select').material_select();
+    $('.venobox').venobox({
+        spinner : 'cube-grid',
+        overlayClose : false,
+        numeratio  : true,
+        infinigall : true,
+        closeBackground : '#000',
+        numerationBackground : '#000'
+    });
 
     $(".btn-galeria").click(function () {
-        $(this).parent().parent().find(".card-gallery").find("a").each(function () {
-            $(this).trigger("click");
-            return false;
-        });
+        var quantidade = $(this).parent().parent().find('.card-gallery').find("a");
+        if (quantidade.length > 0){
+            $(this).parent().parent().find(".card-gallery").find("a").each(function () {
+                $(this).trigger("click");
+                return false;
+            });
+        }else{
+            swal("Opss!", "Desculpe, ainda não possui galeria !!!", "warning");
+        }
     });
 
     // browser window scroll (in pixels) after which the "back to top" link is shown
