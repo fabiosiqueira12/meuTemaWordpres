@@ -81,7 +81,7 @@ $(document).ready(function () {
 
         $('body,html').animate({
 
-            scrollTop: $($(this).attr("href")).offset().top - 110
+            scrollTop: $($(this).attr("href")).offset().top - 80
 
         }, 700);
 
@@ -104,7 +104,7 @@ function onScroll(event) {
     $('.lista-principal a').each(function () {
         var currLink = $(this);
         var refElement = $(currLink.attr("href"));
-        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+        if ( (refElement.position().top - 100) <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
             if ($(refElement).attr("id") != "inicio") {
                 currLink.addClass("active");
             } else {
